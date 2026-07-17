@@ -14,24 +14,24 @@ const projects = [
     description: "Production-grade AI Observability Platform built using Spring Boot, Next.js, PostgreSQL, Neon, Railway, and Vercel.",
     features: ["LLM Streaming", "Provider Abstraction", "RAG", "Document Intelligence", "Observability Dashboard", "Conversation Management", "Real-time Streaming", "Metrics", "Memory", "Model Comparison"],
     tech: ["Spring Boot", "Next.js", "PostgreSQL", "Neon", "Railway", "Vercel", "OpenAI", "Gemini"],
-    github: process.env.NEXT_PUBLIC_TRACELM_GITHUB || "#",
-    live: process.env.NEXT_PUBLIC_TRACELM_LIVE || "#"
+    github: process.env.NEXT_PUBLIC_TRACELM_GITHUB || "https://github.com/lokeshwarM/TraceLM",
+    live: process.env.NEXT_PUBLIC_TRACELM_LIVE || "https://github.com/lokeshwarM"
   },
   {
     title: "Express",
     description: "AI-powered real-time communication and billing platform featuring authentication, session management, WebRTC, OpenAI Whisper transcription, JWT security, and PostgreSQL.",
     features: ["WebRTC", "AI Transcription", "Session Billing", "Ledger", "Authentication", "REST APIs", "AWS Deployment"],
     tech: ["WebRTC", "OpenAI Whisper", "JWT", "PostgreSQL", "AWS"],
-    github: process.env.NEXT_PUBLIC_EXPRESS_GITHUB || "#",
-    live: process.env.NEXT_PUBLIC_EXPRESS_LIVE || "#"
+    github: process.env.NEXT_PUBLIC_EXPRESS_GITHUB || "https://github.com/lokeshwarM/Express",
+    live: process.env.NEXT_PUBLIC_EXPRESS_LIVE || "https://github.com/lokeshwarM"
   },
   {
     title: "Resume Screening Assistant",
     description: "Machine Learning based resume classification system.",
     features: ["NLP", "Classification", "Logistic Regression", "TF-IDF"],
     tech: ["Python", "Scikit-learn"],
-    github: process.env.NEXT_PUBLIC_RESUME_GITHUB || "#",
-    live: process.env.NEXT_PUBLIC_RESUME_LIVE || "#"
+    github: process.env.NEXT_PUBLIC_RESUME_GITHUB || "https://github.com/lokeshwarM/Resume-Screening",
+    live: process.env.NEXT_PUBLIC_RESUME_LIVE || "https://github.com/lokeshwarM"
   }
 ];
 

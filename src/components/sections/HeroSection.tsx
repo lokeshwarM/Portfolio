@@ -67,13 +67,13 @@ export const HeroSection = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex flex-wrap gap-4"
         >
-          <Link href={process.env.NEXT_PUBLIC_RESUME_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", className: "rounded-full gap-2" })}>
+          <Link href={process.env.NEXT_PUBLIC_RESUME_URL || "https://github.com/lokeshwarM"} target="_blank" className={buttonVariants({ size: "lg", className: "rounded-full gap-2" })}>
             <Download size={18} /> Resume
           </Link>
-          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
+          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/lokeshwarM"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
             <FaGithub size={18} /> GitHub
           </Link>
-          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
+          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/in/lokeshwarM"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
             <FaLinkedin size={18} /> LinkedIn
           </Link>
           <Link href="#contact" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
