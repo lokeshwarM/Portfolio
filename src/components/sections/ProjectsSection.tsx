@@ -95,8 +95,12 @@ export const ProjectsSection = () => {
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="glass border-foreground/10 bg-background/80">
                         {project.githubLinks.map(link => (
-                          <DropdownMenuItem key={link.label} className="cursor-pointer" asChild>
-                            <Link href={link.url} target="_blank">{link.label} Repo</Link>
+                          <DropdownMenuItem
+                            key={link.label}
+                            className="cursor-pointer"
+                            render={<Link href={link.url} target="_blank" />}
+                          >
+                            {link.label} Repo
                           </DropdownMenuItem>
                         ))}
                       </DropdownMenuContent>
