@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
@@ -22,7 +28,10 @@ const projects = [
     description: "AI-powered real-time communication and billing platform featuring authentication, session management, WebRTC, OpenAI Whisper transcription, JWT security, and PostgreSQL.",
     features: ["WebRTC", "AI Transcription", "Session Billing", "Ledger", "Authentication", "REST APIs", "AWS Deployment"],
     tech: ["WebRTC", "OpenAI Whisper", "JWT", "PostgreSQL", "AWS"],
-    github: process.env.NEXT_PUBLIC_EXPRESS_GITHUB || "https://github.com/lokeshwarM/Express",
+    githubLinks: [
+      { label: "Frontend", url: process.env.NEXT_PUBLIC_EXPRESS_FRONTEND_GITHUB || "https://github.com/lokeshwarM/Express-Frontend" },
+      { label: "Backend", url: process.env.NEXT_PUBLIC_EXPRESS_BACKEND_GITHUB || "https://github.com/lokeshwarM/Express-Backend" }
+    ],
     live: process.env.NEXT_PUBLIC_EXPRESS_LIVE || "https://github.com/lokeshwarM"
   },
   {
@@ -79,9 +88,24 @@ export const ProjectsSection = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <Link href={project.github} target="_blank" className={buttonVariants({ variant: "outline", className: "glass gap-2 rounded-full hover:bg-foreground/10" })}>
-                    <FaGithub size={18} /> Code
-                  </Link>
+                  {project.githubLinks ? (
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className={buttonVariants({ variant: "outline", className: "glass gap-2 rounded-full hover:bg-foreground/10 outline-none cursor-pointer" })}>
+                        <FaGithub size={18} /> Code
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="glass border-foreground/10 bg-background/80">
+                        {project.githubLinks.map(link => (
+                          <DropdownMenuItem key={link.label} className="cursor-pointer" asChild>
+                            <Link href={link.url} target="_blank">{link.label} Repo</Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  ) : (
+                    <Link href={project.github!} target="_blank" className={buttonVariants({ variant: "outline", className: "glass gap-2 rounded-full hover:bg-foreground/10" })}>
+                      <FaGithub size={18} /> Code
+                    </Link>
+                  )}
                   <Link href={project.live} target="_blank" className={buttonVariants({ className: "gap-2 rounded-full" })}>
                     <ExternalLink size={18} /> Live Demo
                   </Link>
