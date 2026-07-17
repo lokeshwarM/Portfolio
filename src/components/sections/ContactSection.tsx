@@ -24,13 +24,13 @@ export const ContactSection = () => {
         </p>
 
         <Card className="p-8 glass-card border-foreground/10 flex flex-col md:flex-row items-center justify-center gap-6">
-          <Link href="mailto:lokeshwar@example.com" className={buttonVariants({ size: "lg", className: "rounded-full gap-2 w-full md:w-auto" })}>
+          <Link href={process.env.NEXT_PUBLIC_EMAIL ? `mailto:${process.env.NEXT_PUBLIC_EMAIL}` : "#"} className={buttonVariants({ size: "lg", className: "rounded-full gap-2 w-full md:w-auto" })}>
             <Mail size={18} /> Say Hello
           </Link>
-          <Link href="https://github.com" target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "glass rounded-full gap-2 w-full md:w-auto" })}>
+          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "glass rounded-full gap-2 w-full md:w-auto" })}>
             <FaGithub size={18} /> GitHub
           </Link>
-          <Link href="https://linkedin.com" target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "glass rounded-full gap-2 w-full md:w-auto" })}>
+          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "glass rounded-full gap-2 w-full md:w-auto" })}>
             <FaLinkedin size={18} /> LinkedIn
           </Link>
         </Card>

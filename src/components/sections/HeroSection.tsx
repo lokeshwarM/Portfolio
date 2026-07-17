@@ -67,13 +67,13 @@ export const HeroSection = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex flex-wrap gap-4"
         >
-          <Button size="lg" className="rounded-full gap-2">
+          <Link href={process.env.NEXT_PUBLIC_RESUME_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", className: "rounded-full gap-2" })}>
             <Download size={18} /> Resume
-          </Button>
-          <Link href="https://github.com" target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
+          </Link>
+          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
             <FaGithub size={18} /> GitHub
           </Link>
-          <Link href="https://linkedin.com" target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
+          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "#"} target="_blank" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
             <FaLinkedin size={18} /> LinkedIn
           </Link>
           <Link href="#contact" className={buttonVariants({ size: "lg", variant: "outline", className: "rounded-full gap-2 glass" })}>
